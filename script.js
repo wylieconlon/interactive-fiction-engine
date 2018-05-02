@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', function() {
   WIF.addRoom('Drawbridge', castleOfDoomDrawbridge);
   WIF.addRoom('Guard Tower', castleOfDoomGuardTower);
 
-  let isDrawbridgeOpen = false;
+  var isDrawbridgeOpen = false;
 
   WIF.enterRoom('Drawbridge');
   displayHelp();

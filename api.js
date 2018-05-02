@@ -3,33 +3,33 @@ window.WIF = {
 };
 
 window.addEventListener('DOMContentLoaded', function() {
-  const rooms = {};
-  const roomConnections = {};
+  var rooms = {};
+  var roomConnections = {};
 
-  const levelHeader = document.createElement('div');
+  var levelHeader = document.createElement('div');
   levelHeader.className = 'wif-header';
   document.body.appendChild(levelHeader);
 
-  const messageLog = document.createElement('p');
+  var messageLog = document.createElement('p');
   messageLog.className = 'wif-messages';
   document.body.appendChild(messageLog);
 
-  const input = document.createElement('input');
+  var input = document.createElement('input');
   input.className = 'wif-input';
   document.body.appendChild(input);
 
-  const button = document.createElement('button');
+  var button = document.createElement('button');
   button.className = 'wif-button';
   button.innerText = 'Go'
   document.body.appendChild(button);
 
-  let currentLocation;
-  let destinations = [];
-  let inputCallback;
+  var currentLocation;
+  var destinations = [];
+  var inputCallback;
 
   function updateHeader() {
-    const currentLocation = WIF.currentLocation;
-    let connections = 'None';
+    var currentLocation = WIF.currentLocation;
+    var connections = 'None';
     if (roomConnections[currentLocation].length) {
       connections = roomConnections[currentLocation].join(', ');
     }
@@ -38,6 +38,7 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   function displayMessage(message) {
+    var el = document.createElement('p');
     messageLog.appendChild(document.createTextNode(message));
   }
 
@@ -58,9 +59,9 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   function hasConnection(name1, name2) {
-    const connectionList = roomConnections[name1];
+    var connectionList = roomConnections[name1];
 
-    for (let i = 0; i < connectionList.length; i++) {
+    for (var i = 0; i < connectionList.length; i++) {
       if (connectionList[i] === name2) {
         return true;
       }
@@ -107,8 +108,8 @@ window.addEventListener('DOMContentLoaded', function() {
   button.addEventListener('click', processInput);
 
   function processInput(e) {
-    const text = input.value.toLowerCase();
-    const splitText = text.split(' ');
+    var text = input.value.toLowerCase();
+    var splitText = text.split(' ');
 
     if (inputCallback) {
       inputCallback(text, splitText);
