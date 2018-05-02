@@ -35,9 +35,7 @@ function updateHeader() {
 }
 
 function displayMessage(message) {
-  var el = document.createElement('p');
-  el.innerText = message;
-  messageLog.appendChild(el);
+  messageLog.innerText = message;
 }
 
 function addRoom(name, callback) {
