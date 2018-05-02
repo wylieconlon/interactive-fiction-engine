@@ -1,6 +1,11 @@
 "use strict";
 
 window.WIF = {
+  addRoom: function (){},
+  enterRoom: function (){},
+  connectRooms: function (){},
+  displayMessage: function (){},
+  setInputHandler: function (){},
   currentLocation: null,
 };
 
