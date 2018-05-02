@@ -1,15 +1,15 @@
 "use strict";
 
-window.WIF = {
-  addRoom: function (){},
-  enterRoom: function (){},
-  connectRooms: function (){},
-  displayMessage: function (){},
-  setInputHandler: function (){},
-  currentLocation: null,
-};
+// window.WIF = {
+//   addRoom: function (){},
+//   enterRoom: function (){},
+//   connectRooms: function (){},
+//   displayMessage: function (){},
+//   setInputHandler: function (){},
+//   currentLocation: null,
+// };
 
-window.addEventListener('DOMContentLoaded', function() {
+// window.addEventListener('DOMContentLoaded', function() {
   var rooms = {};
   var roomConnections = {};
 
@@ -149,5 +149,5 @@ window.addEventListener('DOMContentLoaded', function() {
     displayMessage: displayMessage,
     setInputHandler: setInputHandler,
     currentLocation: null,
-  }
-});
+  };
+// });
