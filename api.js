@@ -20,6 +20,14 @@ button.className = 'wif-button';
 button.innerText = 'Go'
 document.body.appendChild(button);
 
+
+var head = document.head;
+var link = document.createElement('link');
+link.type = 'text/css';
+link.rel = 'stylesheet';
+link.href = 'https://wylieconlon.github.io/interactive-fiction-engine/style.css';
+head.appendChild(link);
+
 var currentLocation;
 var destinations = [];
 var inputCallback;
@@ -36,6 +44,11 @@ function updateHeader() {
 
 function displayMessage(message) {
   messageLog.innerHTML = message;
+  messageLog.className = 'wif-messages is-new';
+
+  setTimeout(function() {
+    messageLog.className = 'wif-messages';
+  }, 1000);
 }
 
 function addRoom(name, callback) {
