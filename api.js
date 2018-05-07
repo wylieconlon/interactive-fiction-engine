@@ -38,9 +38,12 @@ function updateHeader() {
     connections = roomConnections[currentLocation].join(', ');
   }
 
-  levelHeader.innerHTML = '<p>Current Room: <em class="roomName is-new">' + currentLocation + '</em></p><p>Connected rooms: <em>' + connections + '</em></p>';
+  levelHeader.innerHTML = '<p>Current Room: <em class="roomName is-new">' + currentLocation + '</em></p><p>Connected rooms: <em class="roomName is-new">' + connections + '</em></p>';
   setTimeout(function() {
-    document.querySelector('.roomName').className = 'roomName';
+    var els = document.querySelectorAll('.roomName');
+    for (var i = 0; i < els.length; i++) {
+      els[i].className = 'roomName';
+    }
   }, 1000);
 }
 
@@ -106,6 +109,9 @@ function enterRoom(name) {
     return;
   } else if (typeof rooms[name] !== 'function') {
     alert('The name ' + name + ' does not match any rooms. Try WIF.addRoom(name, roomHandler);');
+    return;
+  } else if (WIF.currentLocation && !hasConnection(WIF.currentLocation, name)) {
+    alert('There is no connection between ' + WIF.currentLocation + ' and ' + name);
     return;
   }
 
