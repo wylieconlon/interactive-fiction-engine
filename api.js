@@ -20,7 +20,6 @@ button.className = 'wif-button';
 button.innerText = 'Go'
 document.body.appendChild(button);
 
-
 var head = document.head;
 var link = document.createElement('link');
 link.type = 'text/css';
@@ -39,7 +38,10 @@ function updateHeader() {
     connections = roomConnections[currentLocation].join(', ');
   }
 
-  levelHeader.innerHTML = '<p>Current Room: <em>' + currentLocation + '</em></p><p>Connected rooms: <em>' + connections + '</em></p>';
+  levelHeader.innerHTML = '<p>Current Room: <em class="roomName is-new">' + currentLocation + '</em></p><p>Connected rooms: <em>' + connections + '</em></p>';
+  setTimeout(function() {
+    document.querySelector('.roomName').className = 'roomName';
+  }, 1000);
 }
 
 function displayMessage(message) {
@@ -150,5 +152,6 @@ window.WIF = {
   connectRooms: connectRooms,
   displayMessage: displayMessage,
   setInputHandler: setInputHandler,
+  hasConnection: hasConnection,
   currentLocation: null,
 };

@@ -1,8 +1,10 @@
-.wif-messages {
+.wif-messages,
+.roomName {
   transition: background-color 1s;
   background-color: white;
 }
 
+.roomName.is-new,
 .wif-messages.is-new {
   background-color: rgba(255, 255, 0, .5);
 }
