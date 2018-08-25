@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function() {
   function castleOfDoomDrawbridge() {
     WIF.displayMessage('You are looking at the castle of DOOM from across the moat. You know that ' +
       'inside the castle of DOOM lies the helpless princess who must be rescued from the evil wizard. ' +
-      'Across the moat is a tiny door.');
+      'Across the moat is a tiny door with an open peephole. You assume there is a guard tower behind the door.');
   }
 
   function castleOfDoomGuardTower() {
@@ -47,7 +47,10 @@ window.addEventListener('DOMContentLoaded', function() {
           WIF.displayMessage('It\'s a long way down... but maybe there\'s a way to get across?');
         }
         if (splitText[splitText.length - 1] === 'castle') {
-          WIF.displayMessage('The castle of DOOM is taller than the clouds. On the other side of the moat you can see a tiny door, just barely big enough for one person to get through. The door is closed');
+          WIF.displayMessage('The castle of DOOM is taller than the clouds. On the other side of the moat you can see a tiny door, just barely big enough for one person to get through. The door is closed, with an open peephole.');
+        }
+        if (splitText[splitText.length - 1] === 'guard') {
+          WIF.displayMessage('You think there is a guard behind the tiny window, but you haven\'t gotten his attention.');
         }
       }
       if (splitText[0] === 'pick') {
@@ -81,6 +84,7 @@ window.addEventListener('DOMContentLoaded', function() {
       '<p>Look &lt;something&gt;</p>' +
       '<p>Pick up &lt;something&gt;</p>' + 
       '<p>Talk to &lt;something&gt;</p>' +
+      '<p>Go to &lt;room&gt;</p>' +
       '<p>Help</p>';
     messageLog.appendChild(helpMessage);
   }
