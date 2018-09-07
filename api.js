@@ -48,7 +48,9 @@ function updateHeader() {
 }
 
 function displayMessage(message) {
-  messageLog.innerHTML = message;
+  var el = document.createElement('p');
+  el.innerHTML = message;
+  messageLog.appendChild(el);
   messageLog.className = 'wif-messages is-new';
 
   setTimeout(function() {
