@@ -83,6 +83,7 @@ Required function. The handler is called with two arguments:
 
 Example:
 
+```
 // The user has typed "Talk to Guard"
 
 WIF.setInputHandler(function (text, splitText) {
@@ -94,6 +95,7 @@ WIF.setInputHandler(function (text, splitText) {
     WIF.connectRooms(WIF.currentRoom, 'secret room');
   }
 });
+```
 
 ## Demo
 
